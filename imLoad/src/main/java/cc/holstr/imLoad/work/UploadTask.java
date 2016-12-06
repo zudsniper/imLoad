@@ -21,6 +21,8 @@ import cc.holstr.imLoad.json.JsonGenerator;
 
 public class UploadTask extends SwingWorker<Void, Void>{
 
+	private final static String API_KEY = "NOT_FOR_GITHUB";
+	
 	private List<File> files;
 	
 	private DefaultListModel<String> str;
@@ -34,7 +36,7 @@ public class UploadTask extends SwingWorker<Void, Void>{
 		this.str = str;
 		this.clipboard = clipboard;
 		if(key.equals(Window.apiKeyText)) {
-		helper = new ImgurHttpHelper("57d9fa6227f7442");
+		helper = new ImgurHttpHelper(API_KEY);
 		} else {
 			helper = new ImgurHttpHelper(key);
 		}
